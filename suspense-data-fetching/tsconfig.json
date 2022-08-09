@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "strictBindCallApply": true,
+    "strictFunctionTypes": true,
+    "strictNullChecks": true,
+    "strictPropertyInitialization": true
+  }
+}
