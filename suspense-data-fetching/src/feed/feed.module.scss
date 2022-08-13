@@ -1,0 +1,22 @@
+.feedContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.feed {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 60%;
+}
+
+.feedItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem
+}
+
+.feedItemHeader {
+  display: flex;
+  justify-content: space-between;
+}

@@ -1,10 +1,25 @@
-import styles from './styles.module.scss';
+// Libraries
+import { Suspense } from 'react'
 
-export const App = () => {
+// Components
+import { ProfilePageLayout, SLOT_NAMES } from 'layout/ProfilePageLayout'
+import { ProfileImage } from 'profileImage'
+import { Bio } from 'bio'
+import { Feed } from 'feed'
+import { PageTombstone } from 'pageTombstone'
 
-  return (
-    <div className={styles.container}>
-      Hello World
-    </div>
-  )
-}
+export const App = () => (
+  <Suspense fallback={<PageTombstone />}>
+    <ProfilePageLayout>
+      <ProfilePageLayout.Slot name={SLOT_NAMES.IMAGE}>
+        <ProfileImage />
+      </ProfilePageLayout.Slot>
+      <ProfilePageLayout.Slot name={SLOT_NAMES.BIO}>
+        <Bio />
+      </ProfilePageLayout.Slot>
+      <ProfilePageLayout.Slot name={SLOT_NAMES.FEED}>
+        <Feed />
+      </ProfilePageLayout.Slot>
+    </ProfilePageLayout>
+  </Suspense>
+)

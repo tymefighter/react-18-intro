@@ -1,0 +1,1 @@
+export { PageTombstone } from './PageTombstone'
