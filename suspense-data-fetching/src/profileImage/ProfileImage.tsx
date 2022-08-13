@@ -12,8 +12,6 @@ export const ProfileImage = () => {
       src={url} 
       alt={label} 
       className={styles.profileImage}
-      height="50rem"
-      width="50rem"
     />
   )
 };

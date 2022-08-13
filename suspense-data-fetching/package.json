@@ -4,7 +4,8 @@
   "description": "Tries out Data Fetching along with Suspense in React 18",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack serve"
+    "dev": "webpack serve",
+    "build": "webpack build"
   },
   "keywords": [
     "react-18",
@@ -21,6 +22,7 @@
   "devDependencies": {
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
+    "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.7.1",
     "html-webpack-plugin": "^5.5.0",
     "sass": "^1.54.3",

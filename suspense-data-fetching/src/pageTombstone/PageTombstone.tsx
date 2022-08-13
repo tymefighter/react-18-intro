@@ -3,8 +3,6 @@ import styles from './pageTombstone.module.scss';
 
 export const PageTombstone = () => (
   <div className={styles.pageTombstone}>
-    <p>
-      Loading !!!
-    </p>
+    <span className={styles.loader}>&#8634;</span>
   </div>
 )

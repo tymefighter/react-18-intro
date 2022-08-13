@@ -8,10 +8,13 @@ import { fetchFeed } from './fetchFeed';
 // Types
 import type { FeedItem } from './types';
 
-const getFeedResource = () => wrapPromise(fetchFeed());
+const getFeedResource = (() => {
+  const feedResource = wrapPromise(fetchFeed());
+  return () => feedResource;
+})()
 
 export const useFeed = (): FeedItem[] => {
-  const feedResource = useMemo(() => getFeedResource(), []);
+  const feedResource = getFeedResource();
   const feed = feedResource.read();
 
   return feed;

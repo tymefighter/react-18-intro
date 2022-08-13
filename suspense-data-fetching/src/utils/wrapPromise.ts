@@ -1,6 +1,4 @@
-interface Resource<T> {
-  read: () => T;
-};
+import { Resource } from 'types';
 
 const PROMISE_STATUS = {
   LOADING: 'LOADING',

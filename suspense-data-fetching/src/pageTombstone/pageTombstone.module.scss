@@ -1,8 +1,21 @@
 .pageTombstone {
-  background-color: gray;
   height: 100vh;
   width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@keyframes loaderAnimation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loader {
+  font-size: 7rem;
+  animation: loaderAnimation 1s linear 0s infinite normal none;
 }

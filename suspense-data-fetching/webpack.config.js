@@ -1,5 +1,6 @@
 // Plugins
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyPlugin = require("copy-webpack-plugin");
 
 // Utils
 const path = require('path');
@@ -31,7 +32,14 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist')
   },
-  plugins: [new HtmlWebpackPlugin()],
+  plugins: [
+    new CopyPlugin({
+      patterns: [
+        { from: './src/public' }
+      ]
+    }), 
+    new HtmlWebpackPlugin()
+  ],
   devServer: {
     static: {
       directory: path.join(__dirname, 'dist'),

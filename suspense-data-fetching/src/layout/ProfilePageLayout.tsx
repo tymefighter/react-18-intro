@@ -1,6 +1,9 @@
 // Libraries
 import { Children, ReactElement, ReactNode } from 'react';
 
+// Styles
+import styles from './profilePageLayout.module.scss';
+
 export const SLOT_NAMES = {
   IMAGE: 'IMAGE',
   BIO: 'BIO',
@@ -23,8 +26,8 @@ const ProfilePageLayout = ({ children }: ProfilePageLayoutProps): ReactElement =
   const feedEl = childrenArr.find((childEl: ReactElement): boolean => childEl.props?.name === SLOT_NAMES.FEED);
 
   return (
-    <div>
-      <div>
+    <div className={styles.page}>
+      <div className={styles.topSection}>
         {imageEl?.props?.children}
         {bioEl?.props?.children}
       </div>

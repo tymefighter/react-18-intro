@@ -1,6 +1,3 @@
-// Libraries
-import { useMemo } from 'react';
-
 // Utils
 import { wrapPromise } from 'utils/wrapPromise';
 
@@ -11,7 +8,7 @@ interface Output {
   label: string;
 }; 
 
-const getImageResource = () => {
+const getImageResource = (() => {
   const imagePromise = new Promise<Output>(resolve => {
     const image = new Image();
     image.src = PROFILE_IMAGE_URL;
@@ -23,10 +20,12 @@ const getImageResource = () => {
     });
   })
 
-  return wrapPromise(imagePromise)
-}
+  const imageResource = wrapPromise(imagePromise)
+
+  return () => imageResource
+})();
 
 export const useProfileImage = (): Output => {
-  const imageResource = useMemo(() => getImageResource(), []);
+  const imageResource = getImageResource();
   return imageResource.read();
 };

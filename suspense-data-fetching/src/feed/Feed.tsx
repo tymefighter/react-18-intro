@@ -14,14 +14,14 @@ export const Feed = () => {
         {feed.map(({ title, description, time }: FeedItem) => (
           <div className={styles.feedItem}>
             <div className={styles.feedItemHeader}>
-              <h2>
+              <h2 className={styles.feedItemHeaderTitle}>
                 {title}
               </h2>
-              <p>
+              <p className={styles.feedItemHeaderTimestamp}>
                 {time.toString()}
               </p>
             </div>
-            <p>
+            <p className={styles.feedItemDescription}>
               {description}
             </p>
           </div>
