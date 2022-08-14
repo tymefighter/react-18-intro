@@ -1,0 +1,35 @@
+.container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes loaderAnimation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.tombstoneLoader {
+  font-size: 7rem;
+  animation: loaderAnimation 1s linear 0s infinite normal none;
+}
+
+.emptyDataText {
+  font-size: 4rem;
+}
+
+.dataContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.dataItem {
+  font-size: 1.2rem;
+}
