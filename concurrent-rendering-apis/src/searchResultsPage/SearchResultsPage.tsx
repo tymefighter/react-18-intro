@@ -14,6 +14,11 @@ import styles from './searchResultsPage.module.scss';
 // Types
 import type { SearchResult } from './types';
 
+const performHeaveComputation = () => {
+  let count = 0;
+  for(let i = 0;i < 400000000; i++) count += 1;
+}
+
 export const SearchResultsPage = () => {
   // This controls the search input
   const [searchQueryInput, setSearchQueryInput] = useState('');
@@ -31,6 +36,8 @@ export const SearchResultsPage = () => {
 
   const searchResults: SearchResult[] = useMemo(
     () => {
+      performHeaveComputation();
+
       const lowerCaseSearchQuery = searchQuery.toLowerCase();
       return DATA.filter(({ label }: SearchResult) => label.toLowerCase().includes(lowerCaseSearchQuery))
     }, 

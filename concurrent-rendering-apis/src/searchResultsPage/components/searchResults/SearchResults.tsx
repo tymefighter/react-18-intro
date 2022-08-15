@@ -1,3 +1,6 @@
+// Styles
+import styles from './searchResults.module.scss';
+
 // Types
 import type { SearchResult } from '../../types';
 
@@ -6,11 +9,11 @@ interface SearchResultsProps {
 };
 
 export const SearchResults = ({ searchResults }: SearchResultsProps): JSX.Element => (
-  <div>
+  <div className={styles.searchResults}>
     {searchResults.map(({ label, description }: SearchResult): JSX.Element => (
-      <div key={label}>
-        <h2>{label}</h2>
-        <p>{description}</p>
+      <div key={label} className={styles.searchResult}>
+        <h2 className={styles.searchResultHeading}>{label}</h2>
+        <p className={styles.searchResultDesc}>{description}</p>
       </div>
     ))}
   </div>
