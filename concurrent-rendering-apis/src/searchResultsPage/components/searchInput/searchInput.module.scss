@@ -1,0 +1,27 @@
+.searchInputContainer {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+  width: 20rem;
+}
+
+.searchInput {
+  font-size: 2rem;
+  padding: 0.8rem;
+  border-radius: 12px;
+}
+
+@keyframes loaderAnimation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loader {
+  font-size: 2rem;
+  animation: loaderAnimation 1s linear 0s infinite normal none;
+}
+
