@@ -1,0 +1,1 @@
+export { TabPage } from './TabPage';
